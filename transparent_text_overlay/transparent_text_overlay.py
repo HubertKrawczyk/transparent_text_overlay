@@ -1,17 +1,14 @@
 from __future__ import annotations
 import sys
+import json
+import os
 from PyQt5.QtWidgets import (
     QApplication, QLabel, QWidget, QPushButton,
     QVBoxLayout, QHBoxLayout, QLineEdit, QCheckBox, QSpinBox,
     QTextEdit, QSizeGrip, QColorDialog, QComboBox
 )
 from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import QFont, QColor
-import json
-import os
-from PyQt5.QtWidgets import QLabel, QApplication
-from PyQt5.QtCore import Qt
-import sys
+from PyQt5.QtGui import QFont, QColor, QIcon
 from models import ConfigProps, DisplaySettings
 from overlay.sol_text_overlay import OutlinedTextWidget
 from overlay.text_overlay import DraggableTextEdit
@@ -473,6 +470,8 @@ def initDisplaySettings(config):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon("icon.ico"))
+    
     config = load_config()
     
     ds = initDisplaySettings(config)

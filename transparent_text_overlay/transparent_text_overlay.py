@@ -468,9 +468,17 @@ def initDisplaySettings(config):
     displaySettings.textFilePath = config.get(ConfigProps.TEXT_FILE_PATH.value, DEFAULT_TEXT_FILE_PATH)
     return displaySettings
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS  # PyInstaller extracts to this temp dir
+    except AttributeError:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
+    icon_path = resource_path("icon.ico")
+    app.setWindowIcon(QIcon(icon_path))
     
     config = load_config()
     

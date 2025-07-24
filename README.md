@@ -10,3 +10,5 @@ pip install PyQt5
 ```
 python ./transparent_text_overlay/transparent_text_overlay.py
 ```
+
+, or use .exe from release

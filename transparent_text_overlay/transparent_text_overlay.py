@@ -96,7 +96,7 @@ class SettingsWindow(QWidget):
         self.line_space_input.setPrefix("Linespace: ")
         self.line_space_input.setValue(self.displaySettings.lineSpace)
         
-        self.color_button1 = QPushButton("Pick a Color1", self)
+        self.color_button1 = QPushButton("Pick Color1", self)
         self.color_button1.clicked.connect(self.open_color_picker1)
         self.color_button1.resize(150, 40)
         self.color_button1.setStyleSheet(f"""
@@ -106,7 +106,7 @@ class SettingsWindow(QWidget):
             }}
         """)
         
-        self.color_button2 = QPushButton("Pick a Color2", self)
+        self.color_button2 = QPushButton("Pick Color2", self)
         self.color_button2.clicked.connect(self.open_color_picker2)
         self.color_button2.resize(150, 40)
         self.color_button2.setStyleSheet(f"""
